@@ -1,0 +1,20 @@
+# Online Python compiler (interpreter) to run Python online.
+# Write Python 3 code in this online editor and run it.
+def stringCompression(string):
+   res = ""
+   cnt = 1
+   for i in range(1, len(string)):
+      if string[i - 1] == string[i]:
+         cnt += 1
+      else:
+         res = res + string[i - 1]
+         if cnt > 1:
+            res += str(cnt)
+         cnt = 1
+   res = res + string[-1]
+   if cnt > 1:
+      res += str(cnt)
+   return res
+
+string = "aabbccccca"
+print(stringCompression(string))
